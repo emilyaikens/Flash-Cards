@@ -18,9 +18,7 @@ a {
 .card {
     width: 250px;
     height: 150px;
-    background-color: white;
     margin: 0 auto;
-    border-radius: 10px;
 }
 .question, .answer {
     position: absolute;
@@ -30,6 +28,7 @@ a {
     backface-visibility: hidden;
     text-align: center;
     text-justify: center;
+    border-radius: 10px;
 }
 .answer {
     transform: rotateY(180deg);
