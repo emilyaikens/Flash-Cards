@@ -11,9 +11,7 @@ let dom = {
 };
 
 let vars = {
-    backClicks: 0,
-    nextClicks: 0,
-    answerClicks: 0,
+    scrollClicks: 0,
     htmlCalls: 0,
     cssCalls: 0,
     jsCalls: 0,
@@ -41,6 +39,8 @@ class flashCard {
 
 let card1 = new flashCard("sample question", "sample answer", "html");
 card1.addCard();
+let card2 = new flashCard("second question", "second answer", "html");
+card2.addCard();
 
 dom.question.innerHTML = vars.htmlCards[0].question;
 dom.answer.innerHTML = vars.htmlCards[0].answer;
@@ -48,6 +48,14 @@ dom.answer.innerHTML = vars.htmlCards[0].answer;
 dom.answerButton.addEventListener("click", function() {
     dom.card.classList.toggle("flipped");
 });
+
+dom.next.addEventListener("click", function () {
+    vars.scrollClicks++;
+    dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
+    dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
+});
+
+
 
 
 
