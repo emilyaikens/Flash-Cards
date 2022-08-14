@@ -41,16 +41,21 @@ class flashCard {
     };
     createCard () {
         let newCard = document.createElement("div");
-        newCard.class = "card";
+        newCard.setAttribute("class","card");
+        newCard.classList.add("hidden");
         newCard.id = this.id;
         dom.cardContainer.appendChild(newCard);
 
         let newQuestion = document.createElement("div");
-        newQuestion.class = "question";
+        newQuestion.setAttribute("class","question");
         document.getElementById(this.id).appendChild(newQuestion);
 
         let newAnswer = document.createElement("div");
-        newAnswer.class = "answer";
+        newAnswer.setAttribute("class","answer");
         document.getElementById(this.id).appendChild(newAnswer);
     }
 }
+
+let card1 = new flashCard("this is a test question", "this is a test answer", "html");
+card1.giveId();
+card1.createCard();
