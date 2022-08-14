@@ -9,3 +9,14 @@ let dom = {
     answer: document.getElementById("answer"),
     next: document.getElementById("next")
 };
+
+class flashCard {
+    constructor (question, answer, id, language) {
+        this.question = question;
+        this.answer = answer;
+        this.id = id;
+        this.language = language
+    };
+
+
+}
