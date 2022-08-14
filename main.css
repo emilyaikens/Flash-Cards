@@ -20,6 +20,9 @@ a {
     height: 150px;
     margin: 0 auto;
 }
+.hidden {
+    visibility: hidden;
+}
 .question, .answer {
     position: absolute;
     width: 250px;
