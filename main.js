@@ -10,6 +10,12 @@ let dom = {
     next: document.getElementById("next")
 };
 
+let vars = {
+    backClicks: 0,
+    nextClicks: 0,
+    answerClicks: 0
+};
+
 class flashCard {
     constructor (question, answer, id, language) {
         this.question = question;
