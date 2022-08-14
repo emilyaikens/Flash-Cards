@@ -2,12 +2,11 @@ let dom = {
     html: document.getElementById("html"),
     css: document.getElementById("css"),
     js: document.getElementById("js"),
-    //cardContainer: document.querySelector(".card-container"),
     card: document.querySelector(".card"),
     question: document.querySelector(".question"),
     answer: document.querySelector(".answer"),
     back: document.getElementById("back"),
-    answer: document.getElementById("answer"),
+    answerButton: document.getElementById("answer-button"),
     next: document.getElementById("next")
 };
 
@@ -42,6 +41,13 @@ class flashCard {
 
 let card1 = new flashCard("sample question", "sample answer", "html");
 card1.addCard();
+
+dom.question.innerHTML = vars.htmlCards[0].question;
+dom.answer.innerHTML = vars.htmlCards[0].answer;
+
+dom.answerButton.addEventListener("click", function() {
+    dom.card.classList.toggle("flipped");
+});
 
 
 
