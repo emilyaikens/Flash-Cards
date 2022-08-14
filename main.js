@@ -13,15 +13,29 @@ let dom = {
 let vars = {
     backClicks: 0,
     nextClicks: 0,
-    answerClicks: 0
+    answerClicks: 0,
+    htmlCalls: 0,
+    cssCalls: 0,
+    jsCalls: 0
 };
 
 class flashCard {
-    constructor (question, answer, id, language) {
+    constructor (question, answer, language) {
         this.question = question;
         this.answer = answer;
-        this.id = id;
         this.language = language
+    };
+    giveId() {
+        if (this.language === "html") {
+            vars.htmlCalls++;
+            let cardId = 100 + vars.htmlCalls;
+        } else if (this.language === "css") {
+            vars.cssCalls++;
+            cardId = 200 + vars.cssCalls;
+        } else if (this.language === "js") {
+            vars.jsCalls++;
+            cardId = 300 + vars.jsCalls;
+        };
     };
 
 
