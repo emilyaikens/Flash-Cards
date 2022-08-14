@@ -9,9 +9,18 @@ body {
     text-align: center;
     align-content: center; 
 }
+nav {
+    padding: 20px;
+}
+a {
+    margin: 15px;
+}
 .card {
     width: 250px;
     height: 150px;
     background-color: white;
     margin: 0 auto;
+}
+button {
+    margin: 15px;
 }
