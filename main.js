@@ -12,6 +12,7 @@ let dom = {
 
 let vars = {
     scrollClicks: 0,
+    answerClicks: 0,
     htmlCalls: 0,
     cssCalls: 0,
     jsCalls: 0,
@@ -47,15 +48,35 @@ dom.answer.innerHTML = vars.htmlCards[0].answer;
 
 dom.answerButton.addEventListener("click", function() {
     dom.card.classList.toggle("flipped");
+    vars.answerClicks++;
+        if (dom.answerButton.innerHTML === "Answer") {
+            dom.answerButton.innerHTML = "Question";
+        } else if (dom.answerButton.innerHTML === "Question") {
+            dom.answerButton.innerHTML = "Answer";
+        };
 });
 
-dom.next.addEventListener("click", function () {
-    vars.scrollClicks++;
-    dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
-    dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
-});
+function changeCard (direction) {
+    if (dom.answerButton.innerHTML === "Question") {
+        dom.answerButton.innerHTML = "Answer";
+    };
+    if (vars.answerClicks %2 === 0) {
+        vars.scrollClicks(direction);
+        dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
+        dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
+    } else {
+        dom.card.classList.toggle("flipped");
+        setTimeout(function (){
+            vars.scrollClicks--;
+            dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
+            dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
+            },0500);
+    }
+}
 
+dom.next.addEventListener("click", changeCard(++));
 
+dom.back.addEventListener("click", changeCard(--));
 
 
 
