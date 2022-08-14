@@ -1,0 +1,17 @@
+* {
+    background-color: darkgray;
+    margin: 0;
+    padding: 0;
+}
+body {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    align-content: center; 
+}
+.card {
+    width: 250px;
+    height: 150px;
+    background-color: white;
+    margin: 0 auto;
+}
