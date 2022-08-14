@@ -24,19 +24,26 @@ class flashCard {
         this.question = question;
         this.answer = answer;
         this.language = language
+        this.id = 0
     };
-    giveId() {
+    giveId () {
         if (this.language === "html") {
             vars.htmlCalls++;
-            let cardId = 100 + vars.htmlCalls;
+            this.id = 100 + vars.htmlCalls;
         } else if (this.language === "css") {
             vars.cssCalls++;
-            cardId = 200 + vars.cssCalls;
+            this.id = 200 + vars.cssCalls;
         } else if (this.language === "js") {
             vars.jsCalls++;
-            cardId = 300 + vars.jsCalls;
+            this.id = 300 + vars.jsCalls;
         };
     };
-
+    createCard () {
+        let newCard = document.createElement("div");
+        newCard.setAttribute("class", "card");
+        newCard.setAttribute("id", this.id);
+        let newQuestion = document.createElement("div");
+        newQuestion.
+    }
 
 }
