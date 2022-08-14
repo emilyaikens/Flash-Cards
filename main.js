@@ -59,3 +59,7 @@ class flashCard {
 let card1 = new flashCard("this is a test question", "this is a test answer", "html");
 card1.giveId();
 card1.createCard();
+
+let card2 = new flashCard("second question", "second answer");
+card2.giveId();
+card2.createCard();
