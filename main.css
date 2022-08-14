@@ -20,6 +20,30 @@ a {
     height: 150px;
     background-color: white;
     margin: 0 auto;
+    border-radius: 10px;
+}
+.question, .answer {
+    position: absolute;
+    width: 250px;
+    height: 150px;
+    transition: transform 1s;
+    backface-visibility: hidden;
+    text-align: center;
+    text-justify: center;
+}
+.answer {
+    transform: rotateY(180deg);
+    user-select: none;
+    background-color: pink;
+}
+.question {
+    background-color: lightblue;
+}
+.flipped .question {
+    transform: rotateY(180deg);
+}
+.flipped .answer {
+    transform: rotateY(0);
 }
 button {
     margin: 15px;
