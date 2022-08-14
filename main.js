@@ -2,6 +2,7 @@ let dom = {
     html: document.getElementById("html"),
     css: document.getElementById("css"),
     js: document.getElementById("js"),
+    cardContainer: document.querySelector(".card-container"),
     card: document.querySelector(".card"),
     question: document.querySelector(".question"),
     answer: document.querySelector(".answer"),
@@ -40,10 +41,16 @@ class flashCard {
     };
     createCard () {
         let newCard = document.createElement("div");
-        newCard.setAttribute("class", "card");
-        newCard.setAttribute("id", this.id);
-        let newQuestion = document.createElement("div");
-        newQuestion.
-    }
+        newCard.class = "card";
+        newCard.id = this.id;
+        dom.cardContainer.appendChild(newCard);
 
+        let newQuestion = document.createElement("div");
+        newQuestion.class = "question";
+        document.getElementById(this.id).appendChild(newQuestion);
+
+        let newAnswer = document.createElement("div");
+        newAnswer.class = "answer";
+        document.getElementById(this.id).appendChild(newAnswer);
+    }
 }
