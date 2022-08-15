@@ -11,7 +11,7 @@ A simple web-based flash card program designed to help me review and study mater
 
 ## Getting Started: 
 
-* [Link to game]()
+* [Link to Flash Cards](https://flashcards-ga.netlify.app)
 
 * As of now, new cards need to be added through the back-end. Create a new varible with a class of flashCard and instances of question, answer, and language. Use the method addCard() to add the card to the topic array.
 
