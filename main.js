@@ -7,7 +7,8 @@ let dom = {
     answer: document.querySelector(".answer"),
     back: document.getElementById("back"),
     answerButton: document.getElementById("answer-button"),
-    next: document.getElementById("next")
+    next: document.getElementById("next"),
+    topic: document.getElementById("topic")
 };
 
 let vars = {
@@ -104,15 +105,18 @@ function callLanguage (language) {
 
 //HTML BUTTON - loads html card array
 dom.html.addEventListener("click", function() {
+    dom.topic.innerHTML = "HTML Cards";
     callLanguage(vars.htmlCards);
 });
 
 //CSS BUTTON - loads css card array
 dom.css.addEventListener("click", function() {
+    dom.topic.innerHTML = "CSS Cards";
     callLanguage(vars.cssCards);
 });
 
 //JS BUTTON - loads js card array
 dom.js.addEventListener("click", function() {
+    dom.topic.innerHTML = "JavaScript Cards";
     callLanguage(vars.cssCards);
 });
