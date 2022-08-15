@@ -56,12 +56,30 @@ dom.answerButton.addEventListener("click", function() {
         };
 });
 
-function changeCard (direction) {
+
+dom.next.addEventListener("click", function() {
+        dom.answerButton.innerHTML = "Answer";
+        vars.scrollClicks++;
+    if (vars.answerClicks %2 === 0) {
+        dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
+        dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
+        vars.answerClicks = 0;
+    } else {
+        dom.card.classList.toggle("flipped");
+        setTimeout(function (){
+            dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
+            dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
+            vars.answerClicks = 0;
+            },0500);
+    }
+});
+
+dom.back.addEventListener("click", function() {
     if (dom.answerButton.innerHTML === "Question") {
         dom.answerButton.innerHTML = "Answer";
     };
     if (vars.answerClicks %2 === 0) {
-        vars.scrollClicks(direction);
+        vars.scrollClicks--;
         dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
         dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
     } else {
@@ -72,30 +90,4 @@ function changeCard (direction) {
             dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
             },0500);
     }
-}
-
-dom.next.addEventListener("click", changeCard(++));
-
-dom.back.addEventListener("click", changeCard(--));
-
-
-
-
-
-
-
-//     createCard () {
-//         let newCard = document.createElement("div");
-//         newCard.setAttribute("class","card");
-//         newCard.classList.add("hidden");
-//         newCard.id = this.id;
-//         dom.cardContainer.appendChild(newCard);
-
-//         let newQuestion = document.createElement("div");
-//         newQuestion.setAttribute("class","question");
-//         document.getElementById(this.id).appendChild(newQuestion);
-
-//         let newAnswer = document.createElement("div");
-//         newAnswer.setAttribute("class","answer");
-//         document.getElementById(this.id).appendChild(newAnswer);
-//     }
+});
