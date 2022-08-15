@@ -1,5 +1,5 @@
 * {
-    background-color: darkgray;
+    background-color: #7D9C90;
     margin: 0;
     padding: 0;
 }
@@ -13,17 +13,20 @@ body {
 }
 nav {
     padding: 10px;
-    border: solid black;
+    border: solid #504538;
     width: 80%;
     margin: 0 auto;
+    background-color: #B2D3C6;
+    border-radius: 10px;
 }
 a {
     margin: 15px;
     padding: 0px 20px;
     font-size: 120%;
+    background-color: #B2D3C6;
 }
 #topic {
-    font-size: 120%;
+    font-size: 110%;
     padding: 40px;
     margin: 15px 10px 0px 10px;
 }
@@ -31,9 +34,6 @@ a {
     width: 500px;
     height: 300px;
     margin: 0 auto;
-}
-.hidden {
-    visibility: hidden;
 }
 .question, .answer {
     position: absolute;
@@ -48,10 +48,12 @@ a {
 .answer {
     transform: rotateY(180deg);
     user-select: none;
-    background-color: pink;
+    background-color: #D5CABD;
+    border: solid #504538;
 }
 .question {
-    background-color: lightblue;
+    background-color: #D5CABD;
+    border: solid #504538;
 }
 .flipped .question {
     transform: rotateY(180deg);
@@ -60,19 +62,18 @@ a {
     transform: rotateY(0);
 }
 button {
-    border: solid #677381;
+    border: solid #504538;
+    border-radius: 10px;
     margin: 30px 10px 50px 10px;
     padding: 10px;
     background-color: #D9E5E0;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
     color: #4B4A54;
+    font-weight: bold;
 }
 button:hover {
-    background-color: pink;
-}
-#answer-button:hover{
-    background-color: blue;
+    background-color: #C0A788;
 }
 @media only screen and (max-width: 600px) {
     .card {
