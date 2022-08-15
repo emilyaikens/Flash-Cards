@@ -25,6 +25,10 @@ a {
     font-size: 120%;
     background-color: #B2D3C6;
 }
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
 #topic {
     font-size: 110%;
     padding: 40px;
@@ -36,13 +40,12 @@ a {
     margin: 0 auto;
 }
 .question, .answer {
-    position: absolute;
+    position: fixed;
     width: 500px;
     height: 300px;
     transition: transform 1s;
     backface-visibility: hidden;
-    text-align: center;
-    text-justify: center;
+    line-height: 100px;
     border-radius: 10px;
     background-color: #D5CABD;
     border: solid #504538;
