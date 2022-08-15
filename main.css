@@ -44,16 +44,12 @@ a {
     text-align: center;
     text-justify: center;
     border-radius: 10px;
+    background-color: #D5CABD;
+    border: solid #504538;
 }
 .answer {
     transform: rotateY(180deg);
     user-select: none;
-    background-color: #D5CABD;
-    border: solid #504538;
-}
-.question {
-    background-color: #D5CABD;
-    border: solid #504538;
 }
 .flipped .question {
     transform: rotateY(180deg);
@@ -74,6 +70,11 @@ button {
 }
 button:hover {
     background-color: #C0A788;
+}
+#q-head, #a-head {
+    background-color: #D5CABD;
+    border-radius: 10px;
+    padding: 10px;
 }
 @media only screen and (max-width: 600px) {
     .card {
