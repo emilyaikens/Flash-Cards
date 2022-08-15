@@ -37,9 +37,9 @@ class flashCard {
 }
 //ALL NEW CARDS GO HERE
 //__________________________________________________________________________________________________________________
-let card1 = new flashCard("what does html stand for?", "Hypertext <br> Markup <br> Language", "html");
+let card1 = new flashCard("what does html stand for?", "Hypertext Markup Language", "html");
 card1.addCard();
-let card2 = new flashCard("How are HTML elements formatted?", "An opening tag <>, a closing tag </>. Contents can go between the opening and closing tags.", "html");
+let card2 = new flashCard("How are HTML elements formatted?", "An opening tag < >, a closing tag < / >. Contents can go between the opening and closing tags.", "html");
 card2.addCard();
 //__________________________________________________________________________________________________________________
 
@@ -76,21 +76,24 @@ function nextFunction (cardType) {
 };
 
 function backFunction (cardType) {
-    dom.back.addEventListener("click", function() {
-        dom.answerButton.innerHTML = "Answer";
-        if (vars.answerClicks %2 === 0) {
-            vars.scrollClicks--;
-            dom.question.innerHTML = cardType[vars.scrollClicks].question;
-            dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
-        } else {
-            dom.card.classList.toggle("flipped");
-            setTimeout(function (){
+    if (dom.question.innerHTML !== cardType[0] && //debug, can't click back if it's the first card doesn't quite work
+        dom.answer.innerHTML !== cardType [0]) {
+        dom.back.addEventListener("click", function() {
+            dom.answerButton.innerHTML = "Answer";
+            if (vars.answerClicks %2 === 0) {
                 vars.scrollClicks--;
                 dom.question.innerHTML = cardType[vars.scrollClicks].question;
                 dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
-                },0500);
-        }
-        });
+            } else {
+                dom.card.classList.toggle("flipped");
+                setTimeout(function (){
+                    vars.scrollClicks--;
+                    dom.question.innerHTML = cardType[vars.scrollClicks].question;
+                    dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+                    },0500);
+            }
+            });
+        };        
 };
 
 function callLanguage (language) {
