@@ -37,9 +37,9 @@ class flashCard {
 }
 //ALL NEW CARDS GO HERE
 //__________________________________________________________________________________________________________________
-let card1 = new flashCard("sample question", "sample answer", "html");
+let card1 = new flashCard("what does html stand for?", "Hypertext <br> Markup <br> Language", "html");
 card1.addCard();
-let card2 = new flashCard("second question", "second answer", "html");
+let card2 = new flashCard("How are HTML elements formatted?", "An opening tag <>, a closing tag </>. Contents can go between the opening and closing tags.", "html");
 card2.addCard();
 //__________________________________________________________________________________________________________________
 
