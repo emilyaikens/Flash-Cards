@@ -76,9 +76,9 @@ function nextFunction (cardType) {
 };
 
 function backFunction (cardType) {
-    if (dom.question.innerHTML !== cardType[0].question && //debug, can't click back if it's the first card
+    dom.back.addEventListener("click", function() {
+        if (dom.question.innerHTML !== cardType[0].question && //debug, can't click back if it's the first card
         dom.answer.innerHTML !== cardType[0].answer) {
-        dom.back.addEventListener("click", function() {
             dom.answerButton.innerHTML = "Answer";
             if (vars.answerClicks %2 === 0) {
                 vars.scrollClicks--;
@@ -91,9 +91,9 @@ function backFunction (cardType) {
                     dom.question.innerHTML = cardType[vars.scrollClicks].question;
                     dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
                     },0500);
-            }
-            });
-        };        
+            };
+        };
+     });
 };
 
 function callLanguage (language) {
