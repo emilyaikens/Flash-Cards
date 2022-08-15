@@ -13,9 +13,9 @@ let dom = {
 let vars = {
     scrollClicks: 0,
     answerClicks: 0,
-    htmlCalls: 0,
-    cssCalls: 0,
-    jsCalls: 0,
+    htmlCalls: false,
+    cssCalls: false,
+    jsCalls: false,
     htmlCards: [],
     cssCards: [],
     jsCards: []
@@ -43,9 +43,28 @@ card1.addCard();
 let card2 = new flashCard("second question", "second answer", "html");
 card2.addCard();
 
+dom.html.addEventListener("click", function() {
+    vars.htmlCalls = true;
+    vars.cssCalls = false;
+    vars.jsCalls = false;
+});
+
+dom.css.addEventListener("click", function() {
+    vars.htmlCalls = false;
+    vars.cssCalls = true;
+    vars.jsCalls = false;
+});
+
+dom.js.addEventListener("click", function() {
+    vars.htmlCalls = false;
+    vars.cssCalls = false;
+    vars.jsCalls = true;
+});
+
 dom.question.innerHTML = vars.htmlCards[0].question;
 dom.answer.innerHTML = vars.htmlCards[0].answer;
 
+//ANSWER BUTTON
 dom.answerButton.addEventListener("click", function() {
     dom.card.classList.toggle("flipped");
     vars.answerClicks++;
@@ -55,8 +74,7 @@ dom.answerButton.addEventListener("click", function() {
             dom.answerButton.innerHTML = "Answer";
         };
 });
-
-
+//NEXT BUTTON
 dom.next.addEventListener("click", function() {
         dom.answerButton.innerHTML = "Answer";
         vars.scrollClicks++;
@@ -73,7 +91,7 @@ dom.next.addEventListener("click", function() {
             },0500);
     }
 });
-
+//BACK BUTTON
 dom.back.addEventListener("click", function() {
     if (dom.answerButton.innerHTML === "Question") {
         dom.answerButton.innerHTML = "Answer";
