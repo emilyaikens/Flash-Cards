@@ -43,6 +43,55 @@ card1.addCard();
 let card2 = new flashCard("second question", "second answer", "html");
 card2.addCard();
 
+function answerFunction () {
+    dom.answerButton.addEventListener("click", function() {
+        dom.card.classList.toggle("flipped");
+        vars.answerClicks++;
+            if (dom.answerButton.innerHTML === "Answer") {
+                dom.answerButton.innerHTML = "Question";
+            } else if (dom.answerButton.innerHTML === "Question") {
+                dom.answerButton.innerHTML = "Answer";
+            };
+        });
+};
+
+function nextFunction (cardType) {
+    dom.next.addEventListener("click", function() {
+        dom.answerButton.innerHTML = "Answer";
+        vars.scrollClicks++;
+    if (vars.answerClicks %2 === 0) {
+        dom.question.innerHTML = cardType[vars.scrollClicks].question;
+        dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+        vars.answerClicks = 0;
+    } else {
+        dom.card.classList.toggle("flipped");
+        setTimeout(function (){
+            dom.question.innerHTML = cardType[vars.scrollClicks].question;
+            dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+            vars.answerClicks = 0;
+            },0500);
+    }
+    });
+};
+
+function backFunction (cardType) {
+    dom.back.addEventListener("click", function() {
+        dom.answerButton.innerHTML = "Answer";
+        if (vars.answerClicks %2 === 0) {
+            vars.scrollClicks--;
+            dom.question.innerHTML = cardType[vars.scrollClicks].question;
+            dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+        } else {
+            dom.card.classList.toggle("flipped");
+            setTimeout(function (){
+                vars.scrollClicks--;
+                dom.question.innerHTML = cardType[vars.scrollClicks].question;
+                dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+                },0500);
+        }
+        });
+}
+
 //HTML BUTTON - loads html card array
 dom.html.addEventListener("click", function() {
     vars.htmlCalls = true;
@@ -53,51 +102,9 @@ dom.html.addEventListener("click", function() {
     dom.question.innerHTML = vars.htmlCards[0].question;
     dom.answer.innerHTML = vars.htmlCards[0].answer;
 
-    //answer button
-    dom.answerButton.addEventListener("click", function() {
-    dom.card.classList.toggle("flipped");
-    vars.answerClicks++;
-        if (dom.answerButton.innerHTML === "Answer") {
-            dom.answerButton.innerHTML = "Question";
-        } else if (dom.answerButton.innerHTML === "Question") {
-            dom.answerButton.innerHTML = "Answer";
-        };
-    });
-    //next button
-    dom.next.addEventListener("click", function() {
-        dom.answerButton.innerHTML = "Answer";
-        vars.scrollClicks++;
-    if (vars.answerClicks %2 === 0) {
-        dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
-        dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
-        vars.answerClicks = 0;
-    } else {
-        dom.card.classList.toggle("flipped");
-        setTimeout(function (){
-            dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
-            dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
-            vars.answerClicks = 0;
-            },0500);
-    }
-    });
-    //back button
-    dom.back.addEventListener("click", function() {
-    if (dom.answerButton.innerHTML === "Question") {
-        dom.answerButton.innerHTML = "Answer";
-    };
-    if (vars.answerClicks %2 === 0) {
-        vars.scrollClicks--;
-        dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
-        dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
-    } else {
-        dom.card.classList.toggle("flipped");
-        setTimeout(function (){
-            vars.scrollClicks--;
-            dom.question.innerHTML = vars.htmlCards[vars.scrollClicks].question;
-            dom.answer.innerHTML = vars.htmlCards[vars.scrollClicks].answer;
-            },0500);
-    }
-    });
+    answerFunction();
+    nextFunction(vars.htmlCards);
+    backFunction(vars.htmlCards);
 });
 //CSS BUTTON - loads css card array
 dom.css.addEventListener("click", function() {
