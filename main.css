@@ -74,8 +74,9 @@ button:hover {
 #q-head, #a-head, #q-paragraph, #a-paragrph {
     background-color: #D5CABD;
     border-radius: 10px;
-    padding: 10px;
+    padding: 20px;
 }
+
 @media only screen and (max-width: 600px) {
     .card {
         width: 250px;
