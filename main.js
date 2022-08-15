@@ -90,39 +90,27 @@ function backFunction (cardType) {
         });
 }
 
+function callLanguage (language) {
+    vars.scrollClicks = 0;
+    console.log("if thing is working");
+    dom.question.innerHTML = language[0].question;
+    dom.answer.innerHTML = language[0].answer;
+
+    nextFunction(language);
+    backFunction(language);
+};
+
 //HTML BUTTON - loads html card array
 dom.html.addEventListener("click", function() {
-    vars.scrollClicks = 0;
-    console.log("if thing is working html");
-    dom.question.innerHTML = vars.htmlCards[0].question;
-    dom.answer.innerHTML = vars.htmlCards[0].answer;
-
-    nextFunction(vars.htmlCards);
-    backFunction(vars.htmlCards);
+    callLanguage(vars.htmlCards);
 });
 
 //CSS BUTTON - loads css card array
 dom.css.addEventListener("click", function() {
-    console.log("if thing is working css");
-    vars.scrollClicks = 0;
-    dom.question.innerHTML = vars.cssCards[0].question;
-    dom.answer.innerHTML = vars.cssCards[0].answer;
-
-    nextFunction(vars.cssCards);
-    backFunction(vars.cssCards);
+    callLanguage(vars.cssCards);
 });
 
 //JS BUTTON - loads js card array
 dom.js.addEventListener("click", function() {
-    console.log("if thing is working css");
-    vars.scrollClicks = 0;
-    dom.question.innerHTML = vars.cssCards[0].question;
-    dom.answer.innerHTML = vars.cssCards[0].answer;
-
-    nextFunction(vars.jsCards);
-    backFunction(vars.jsCards);
+    callLanguage(vars.cssCards);
 });
-
-// if (vars.htmlCalls === true) {
-    
-// };
