@@ -76,8 +76,8 @@ function nextFunction (cardType) {
 };
 
 function backFunction (cardType) {
-    if (dom.question.innerHTML !== cardType[0] && //debug, can't click back if it's the first card doesn't quite work
-        dom.answer.innerHTML !== cardType [0]) {
+    if (dom.question.innerHTML !== cardType[0].question && //debug, can't click back if it's the first card
+        dom.answer.innerHTML !== cardType[0].answer) {
         dom.back.addEventListener("click", function() {
             dom.answerButton.innerHTML = "Answer";
             if (vars.answerClicks %2 === 0) {
