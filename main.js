@@ -34,11 +34,13 @@ class flashCard {
         };
     };
 }
-
+//ALL NEW CARDS GO HERE
+//__________________________________________________________________________________________________________________
 let card1 = new flashCard("sample question", "sample answer", "html");
 card1.addCard();
 let card2 = new flashCard("second question", "second answer", "html");
 card2.addCard();
+//__________________________________________________________________________________________________________________
 
 function answerFunction () {
     dom.answerButton.addEventListener("click", function() {
@@ -88,7 +90,7 @@ function backFunction (cardType) {
                 },0500);
         }
         });
-}
+};
 
 function callLanguage (language) {
     vars.scrollClicks = 0;
