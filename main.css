@@ -81,7 +81,19 @@ button:hover {
     border-radius: 10px;
     padding: 20px;
 }
-
+#new-question , #new-answer, #card-topic{
+    border: solid #504538;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #D9E5E0;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+    color: #4B4A54;
+    font-weight: bold;
+}
+.hidden {
+    display: none;
+}
 @media only screen and (max-width: 600px) {
     .card {
         width: 250px;
