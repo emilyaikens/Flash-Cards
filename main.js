@@ -3,8 +3,8 @@ let dom = {
     css: document.getElementById("css"),
     js: document.getElementById("js"),
     card: document.querySelector(".card"),
-    question: document.querySelector(".question"),
-    answer: document.querySelector(".answer"),
+    question: document.querySelector("#q-paragraph"),
+    answer: document.querySelector("#a-paragraph"),
     back: document.getElementById("back"),
     answerButton: document.getElementById("answer-button"),
     next: document.getElementById("next"),
@@ -49,8 +49,8 @@ function answerFunction () {
         vars.answerClicks++;
             if (dom.answerButton.innerHTML === "Answer") {
                 dom.answerButton.innerHTML = "Question";
-            } else if (dom.answerButton.innerHTML === "Question") {
-                dom.answerButton.innerHTML = "Answer";
+            } else if (dom.answerButton.innerText === "Question") {
+                dom.answerButton.innerText = "Answer";
             };
         });
 };
@@ -61,14 +61,14 @@ function nextFunction (cardType) {
         dom.answerButton.innerHTML = "Answer";
         vars.scrollClicks++;
     if (vars.answerClicks %2 === 0) {
-        dom.question.innerHTML = cardType[vars.scrollClicks].question;
-        dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+        dom.question.innerText = cardType[vars.scrollClicks].question;
+        dom.answer.innerText = cardType[vars.scrollClicks].answer;
         vars.answerClicks = 0;
     } else {
         dom.card.classList.toggle("flipped");
         setTimeout(function (){
-            dom.question.innerHTML = cardType[vars.scrollClicks].question;
-            dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+            dom.question.innerText = cardType[vars.scrollClicks].question;
+            dom.answer.innerText = cardType[vars.scrollClicks].answer;
             vars.answerClicks = 0;
             },0500);
     }
@@ -77,19 +77,19 @@ function nextFunction (cardType) {
 
 function backFunction (cardType) {
     dom.back.addEventListener("click", function() {
-        if (dom.question.innerHTML !== cardType[0].question && //debug, can't click back if it's the first card
-        dom.answer.innerHTML !== cardType[0].answer) {
+        if (dom.question.innerText !== cardType[0].question && //debug, can't click back if it's the first card
+        dom.answer.innerText !== cardType[0].answer) {
             dom.answerButton.innerHTML = "Answer";
             if (vars.answerClicks %2 === 0) {
                 vars.scrollClicks--;
-                dom.question.innerHTML = cardType[vars.scrollClicks].question;
-                dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+                dom.question.innerText = cardType[vars.scrollClicks].question;
+                dom.answer.innerText = cardType[vars.scrollClicks].answer;
             } else {
                 dom.card.classList.toggle("flipped");
                 setTimeout(function (){
                     vars.scrollClicks--;
-                    dom.question.innerHTML = cardType[vars.scrollClicks].question;
-                    dom.answer.innerHTML = cardType[vars.scrollClicks].answer;
+                    dom.question.innerText = cardType[vars.scrollClicks].question;
+                    dom.answer.innerText = cardType[vars.scrollClicks].answer;
                     },0500);
             };
         };

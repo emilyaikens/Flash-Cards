@@ -1,7 +1,7 @@
 # Flash Card Project
 
 ## Description:
-A simple web-based flash card program designed to help me review and study material for my General Assembly Software Engineering Immersive program. The process of creating the site was a great way to review the material from unit 1 (HTML, CSS, JS) and the finished product will allow me to input and study new material as well!
+A simple browser-based flash card program that I designed to help me review and study material for my General Assembly Software Engineering Immersive program. The process of creating the site was a great way to review the material from unit 1 (HTML, CSS, JS) and the finished product will allow me to input and study new material as well!
 
 ## Technologies Used: 
 * HTML
@@ -20,6 +20,7 @@ A simple web-based flash card program designed to help me review and study mater
 * Card management: allow user to create new cards and remove cards they no longer want
 * Randomize function: "shuffle" the cards so that they show up in randomized order
 * Add languages and topics: as the GA course continues, add new topics and their corresponding buttons, arrays etc.
+* Recreate using node, once I know how
 
 ## Other sources: 
 

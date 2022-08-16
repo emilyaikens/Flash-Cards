@@ -73,7 +73,7 @@ button {
 button:hover {
     background-color: #C0A788;
 }
-#q-head, #a-head, #q-paragraph, #a-paragrph {
+#q-head, #a-head, #q-paragraph, #a-paragraph {
     background-color: #D5CABD;
     border-radius: 10px;
     padding: 20px;
