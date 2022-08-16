@@ -70,6 +70,9 @@ button {
     color: #4B4A54;
     font-weight: bold;
 }
+#new-card {
+    margin: 0px;
+}
 button:hover {
     background-color: #C0A788;
 }
