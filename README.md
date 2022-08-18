@@ -13,14 +13,13 @@ A simple browser-based flash card program that I designed to help me review and 
 
 * [Link to Flash Cards](https://flashcards-ga.netlify.app)
 
-* As of now, new cards need to be added through the back-end. Create a new varible with a class of flashCard and instances of question, answer, and language. Use the method addCard() to add the card to the topic array.
+* As of now, new cards need to be added through the back-end. This is done by creating a new varible with a class of flashCard and instances of question, answer, and language. Apply the method addCard() to add the card to the topic array.
 
 ## Next steps: 
 
-* Card management: allow user to create new cards and remove cards they no longer want
-* Randomize function: "shuffle" the cards so that they show up in randomized order
-* Add languages and topics: as the GA course continues, add new topics and their corresponding buttons, arrays etc.
-* Recreate using node, once I know how
+* This is likely as far as this iteration of the app will go. I would like to create a new flash card app using Node Express and MongoDB. These technologies will allow me to do the following: 
+    * Card management: allow user to create new cards and remove cards they no longer want. A database will allow the card data to persist.
+    * Add new topics: as the GA course continues, I would like to add new topics, each with their own series of cards.
 
 ## Other sources: 
 

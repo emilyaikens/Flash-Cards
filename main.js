@@ -37,10 +37,20 @@ class flashCard {
 }
 //ALL NEW CARDS GO HERE
 //__________________________________________________________________________________________________________________
-let card1 = new flashCard("what does html stand for?", "Hypertext Markup Language", "html");
+let card1 = new flashCard("what does html stand for?", 
+                            "Hypertext Markup Language", 
+                            "html");
 card1.addCard();
-let card2 = new flashCard("How are HTML elements formatted?", "An opening tag < >, a closing tag < / >. Contents can go between the opening and closing tags.", "html");
+
+let card2 = new flashCard("How are HTML elements formatted?", 
+                            "An opening tag < >, a closing tag < / >. Contents can go between the opening and closing tags.", 
+                            "html");
 card2.addCard();
+
+let card3 = new flashCard("What are some examples of non-semantic tags", 
+                            "div and span", 
+                            "html");
+card3.addCard();
 //__________________________________________________________________________________________________________________
 
 function answerFunction () {
